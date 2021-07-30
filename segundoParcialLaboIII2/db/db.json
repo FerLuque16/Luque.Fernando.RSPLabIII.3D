@@ -1,0 +1,37 @@
+{
+  "mascotas": [
+    {
+      "id": 1627596817884,
+      "titulo": "Con un 6",
+      "transaccion": "venta",
+      "descripcion": "Cinco",
+      "precio": 12000,
+      "tipo": "perro",
+      "raza": "Caniche",
+      "fecha_nac": "2021-07-30",
+      "vacunado": "noVacunado"
+    },
+    {
+      "id": 1627684391962,
+      "titulo": "Perrito",
+      "transaccion": "venta",
+      "descripcion": "Perro 2kg marron",
+      "precio": 5000,
+      "tipo": "perro",
+      "raza": "doverman",
+      "fecha_nac": "2021-07-08",
+      "vacunado": "noVacunado"
+    },
+    {
+      "id": 1627685706757,
+      "titulo": "Perrito",
+      "transaccion": "alquiler",
+      "descripcion": "Perro 2kg marron",
+      "precio": 6000,
+      "tipo": "perro",
+      "raza": "Caniche",
+      "fecha_nac": "2021-07-13",
+      "vacunado": "vacunado"
+    }
+  ]
+}

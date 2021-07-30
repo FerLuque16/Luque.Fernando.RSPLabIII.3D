@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/scripts.js" type="module"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-danger" >
+            <div class="container-fluid">
+                <a class="navbar-brand d-none d-sm-inline-block" href="#">
+                    <img src="./images/tiendaAnimales.svg" alt="" width="100">Tienda de Mascotas
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Anuncio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"href="#">Contacto</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <section id="textoPrincipal" class="bg-danger">
+
+        <p class="administracion">Administracion</p>
+        <img src="./images/imagenAnimales.jpg" alt="" id="imagenPrincipal">
+    </section>
+    
+    
+        <section>
+            <form action="" class="container-fluid  bg-danger">
+                <input type="hidden" name="id">
+    
+                <div class="row d-flex justify-content-center bg-danger ">
+    
+                    <div class="form-group col-4 ">
+                      <label for="">TITULO:</label>
+                      <input type="text" name="titulo" class="form-control" required placeholder="Titulo">
+                      <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+                 <!--</div>
+                  <div class="row d-flex justify-content-center">-->
+      
+                    <div class="form-check col-4">
+                      <label for="">Venta</label>
+                      <input type="radio" name="tipoTransaccion" value="venta" checked required>
+                    </div>
+                    
+                 <!--</div>
+                 <div class="row d-flex justify-content-center">-->
+      
+                    <div class="form-check col-4">
+                      <label for="">Alquiler</label>
+                      <input type="radio" name="tipoTransaccion" value="alquiler" required>
+                    </div>
+                    
+                </div>
+                <div class="row d-flex justify-content-center  bg-danger">
+    
+                    <div class="form-group col-4">
+                      <label for="">DESCRIPCION</label>
+                      <input type="text" name="descripcion" class="form-control" required placeholder="Descripcion">
+                      <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+                 
+      
+                    <div class="form-check col-4">
+                      <label for="">Gato</label>
+                      <input type="radio" name="tipo" value="gato" checked required>
+                    </div>
+                    
+                  <!--</div>
+                  <div class="row d-flex justify-content-center">-->
+      
+                    <div class="form-check col-4">
+                      <label for="">Perro</label>
+                      <input type="radio" name="tipo" value="perro" required>
+                    </div>
+                    
+                </div>
+    
+                <div class="row d-flex justify-content-between  bg-danger">
+    
+                    <div class="form-group col-4">
+                      <label for="">PRECIO</label>
+                      <input type="number" min="0" name="precio"
+                      placeholder="Precio" class="form-control" required placeholder="Titulo">
+                    <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+               <!-- </div>
+    
+                <div class="row d-flex justify-content-center">-->
+    
+                    <div class="form-group col-6">
+                      <label for="">FECHA DE NACIMIENTO</label>
+                      <input type="date" name="fecha"
+                      placeholder="Precio" class="form-control" required placeholder="dd/mm/aa">
+                    <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+                </div>
+    
+                <div class="row d-flex justify-content-between  bg-danger">
+    
+                    <div class="form-group col-4">
+                      <label for="">RAZA</label>
+                      <input type="text" name="raza"
+                      placeholder="Raza" class="form-control" required>
+                        <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+                <!--</div>
+    
+                <div class="row d-flex justify-content-center">-->
+    
+                    <div class="form-group col-6">
+                        <label for="">VACUNADO</label>
+                      <select class="form-select" name="vacunado" id="vacunado">
+                        <option value="vacunado">Si</option>
+                        <option value="noVacunado">No</option>
+    
+    
+                      </select>
+                     <small class="form-text text-muted">Largo maximo 20 caracteres</small>
+                    </div>
+      
+                </div>
+    
+                <button id="btnAlta" type="submit"  class="boton btn btn-success" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                  </svg>Guardar</button>
+    
+                <input type="button" value="Modificar" id="btnModificar" class="oculto" class="btn btn-warning">
+    
+                <input type="button" value="Eliminar" id="btnEliminar" class="oculto" class=" btn btn-danger">
+    
+                <input type="button" value="Cancelar" id="btnCancelar" class="oculto" class="btn btn-dark">
+    
+            </form>
+    
+    
+        </section>
+
+
+            <br>
+
+            
+    <section class="container mt-3 p-5 bg-secondary">
+        <div class="row justify-content-center ">
+            <div class="col-md-10">
+                <h2 class="text-center">FILTROS</h2>
+                
+                <form>
+                    <div class="form-row ">
+                      <div class="col pl-3">
+                        
+
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Filtrar por
+                            </a>
+                          
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" id="filtroPerro" href="#">Perro</a></li>
+                              <li><a class="dropdown-item" id="filtroGato" href="#">Gato</a></li>
+                              <li><a class="dropdown-item" id="filtroTodos" href="#">Todos</a></li>
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="col">
+                        <label for="promedio">Promedio</label>
+                        <input 
+                            type="text"
+                            name="promedio"
+                            id="promedio"
+                            class="form-control"
+                            
+                        >
+                      </div>
+                      <div class="col">
+                        <label for="promedio">Maximo</label>
+                        <input 
+                            type="text"
+                            name="maximo"
+                            id="maximo"
+                            class="form-control"
+                            
+                        >
+                      </div>
+
+                      <div class="col">
+                            <label for="promedio">Minimo</label>
+                            <input 
+                                type="text"
+                                name="minimo"
+                                id="minimo"
+                                class="form-control"
+                                
+                            >
+                      </div>
+                      <div class="col">
+                        <label for="promedio">Porcentaje de vacunados</label>
+                        <input 
+                            type="text"
+                            name="porcentaje"
+                            id="porcentaje"
+                            class="form-control"
+                            
+                        >
+                  </div>
+                    </div>
+                  </form>
+        
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container d-flex justify-content-around bg-danger">    
+            <div class="row d-flex justify-content-around" id="contenedorCheckbox">
+                <div class="col">
+                    <label  for="checkId"></label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkId" id="chkid" value="id" checked hidden>
+                </div>
+                <div class="col">
+                    <label for="checkDescripcion">Descripcion</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkDescripcion" id="chkdescripcion" value="descripcion" checked>
+                </div>
+                <div class="col">
+                    <label  for="checkTitulo">Titulo</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkTitulo" id="chktitulo" value="titulo" checked>
+                </div>
+                <div class="col">
+                    <label  for="checkTransaccion">Transaccion</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkTransaccion" id="chktransaccion" value="transaccion" checked>
+                </div>
+                <div class="col">
+                    <label for="checkPrecio">Precio</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkPrecio" id="chkprecio" value="precio" checked>
+                </div>
+                <div class="col">
+                    <label for="checkTipo">Tipo</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkTipo" id="chktipo" value="tipo" checked>
+                </div>
+                <div class="col">
+                    <label for="checkRaza">Raza</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkRaza" id="chkraza" value="raza" checked>
+                </div>
+                <div class="col">
+                    <label for="checkFecha_nac">Fecha</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkFecha_nac" id="chkfecha_nac" value="fecha_nac" checked>
+                </div>            
+                <div class="col">
+                    <label for="checkVacunado">Vacunado</label>
+                    <input class="cbox custom-control custom-checkbox" type="checkbox" name="checkVacunado" id="chkvacunado" value="vacunado" checked>
+                </div>            
+                
+            </div>
+        </div>
+    </section>
+            
+        
+        <br>
+        <div id="spinnerContainer">
+                
+        </div>
+        <div class="row">
+            <div class= "container-fluid-sm "id="divLista">
+
+                
+            </div>
+        </div>
+        
+            
+        
+        
+
+    
+        <!--<footer>
+            <nav class="nav justify-content-end bg-danger">
+                <ul >
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Avisos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                </ul>
+    
+                <p id="pHeader" class="offset-3">Todos los derechos reservados &copy;</p>-->
+            <!--</nav>
+        </footer>-->
+        
+        <footer>
+        
+            <ul class="nav justify-content-end bg-danger">
+
+                
+
+                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#">Nosotros</a></li>
+                  
+                
+                <li class="nav-item"><a class="nav-link text-white" href="#">Avisos</a></li>
+                  
+                
+                <li class="nav-item"> <a class="nav-link text-white" href="#">Blog</a></li>
+                 
+                
+                <li class="nav-item"><a class="nav-link text-white " href="#" tabindex="-1" aria-disabled="true">Contactos</a></li>
+                  
+                
+            </ul>
+
+        
+
+    </footer>
+        
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
